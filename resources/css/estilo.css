@@ -1,0 +1,330 @@
+/* Ocupa toda a altura da tela com imagem de fundo */
+.hero {
+    background: url('/imagens/fundo2.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 70px;
+    /* espaço abaixo da navbar */
+    padding-top: 70px;
+    /* altura da navbar fixa */
+}
+
+.fundo-translucido {
+    background-color: rgba(255, 255, 255, 0.3);
+    /* branco com transparência */
+    backdrop-filter: blur(10px);
+    /* aplica o blur atrás */
+    -webkit-backdrop-filter: blur(10px);
+    /* para Safari */
+    border-radius: 1rem;
+    /* borda arredondada */
+    padding: 1.5rem 2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 90vw;
+    margin: 0 auto;
+    color: #000;
+    /* texto escuro */
+    height: auto;
+    box-sizing: border-box;
+}
+
+/* Corrige scroll e remove margens padrão */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.navbar-toggler {
+    position: absolute;
+    top: 50%;
+    right: 1.3rem;
+    /* distancia da borda direita */
+    transform: translateY(-50%);
+    padding: 0.25rem 0.75rem;
+    margin-right: 0;
+    z-index: 1050;
+}
+
+.bg-blur {
+    background-color: #ffffff81;
+    /* branco translúcido */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    /* borda sutil para destacar */
+    z-index: 1100;
+    /* para ficar acima dos outros elementos */
+}
+
+
+.cinza {
+    color: #262626;
+}
+
+.navbar-nav>.nav-item {
+    margin: 0 0.5rem;
+}
+
+.sobre-nos .icone-box {
+    width: 90px;
+    height: 90px;
+    /* Altura fixa igual à largura */
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+    /* Evita que o flexbox tente esticar ou reduzir */
+}
+
+.sobre-nos .icone-box i {
+    transform: rotate(-45deg);
+    font-size: 2.5rem;
+    color: #f6aa1c;
+}
+
+.sobre-nos .col-md-6.d-flex {
+    align-items: center;
+    gap: 1.5rem;
+    /* Espaço entre o ícone e o texto */
+}
+
+
+.servicos p {
+    text-align: justify;
+}
+
+.img-hover-zoom img {
+    transition: transform 0.4s ease;
+}
+
+.img-hover-zoom:hover img {
+    transform: scale(1.08);
+}
+
+/* === GERAL === */
+.videos {
+  padding: 5rem 0;
+  display: flex;
+  align-items: center;
+  min-height: 90vh;
+}
+
+
+.videos .ratio {
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+
+.video-bloco {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.videos p {
+  font-size: 1.2rem;   /* ou 18px, se preferir */
+
+  text-align: center;  /* opcional: centraliza se não estiver */
+}
+
+.videos a.btn {
+  padding: 0.75rem 2.5rem;
+  font-size: 1.1rem;
+  min-width: 250px;
+  border-radius: 0.5rem;
+}
+
+.videos .btn i {
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.videos video {
+  border-radius: 0.8rem; /* ou 8px, 10px, o que preferir */
+  overflow: hidden;
+}
+
+/* === CONTROLES DO CARROSSEL === */
+.carousel-control-prev,
+.carousel-control-next {
+  top: 35.5%;
+  transform: translateY(-50%);
+  height: auto;
+  width: 3rem; /* ou 5% se preferir */
+  opacity: 1;
+  z-index: 2;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: transparent;
+  background-image: none !important;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+  background-color: rgba(255, 193, 7, 0.85);
+}
+
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  display: block;
+}
+
+.carousel-control-prev-icon::before {
+  transform: rotate(-135deg);
+}
+
+.carousel-control-next-icon::before {
+  transform: rotate(45deg);
+}
+
+
+.contato .lado-esquerdo {
+  border-right: 2px solid #e5e3e3a3;
+}
+
+.btn i {
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+/* === RESPONSIVIDADE === */
+
+/* CELULAR (1 vídeo) */
+@media (max-width: 767.98px) {
+  #carouselVideosMobile {
+    display: block !important;
+  }
+
+  #carouselVideosTablet,
+  #carouselVideosDesktop {
+    display: none !important;
+  }
+
+  .video-bloco {
+    width: 90%;
+    margin: 0 auto 1.5rem auto;
+  }
+}
+
+/* TABLET (2 vídeos) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #carouselVideosTablet {
+    display: block !important;
+  }
+
+  #carouselVideosMobile,
+  #carouselVideosDesktop {
+    display: none !important;
+  }
+
+  .carousel-item > .d-flex {
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .video-bloco {
+    width: 45%;
+    min-width: 250px;
+  }
+}
+
+/* DESKTOP (3 vídeos) */
+@media (min-width: 992px) {
+  #carouselVideosDesktop {
+    display: block !important;
+  }
+
+  #carouselVideosMobile,
+  #carouselVideosTablet {
+    display: none !important;
+  }
+
+  .carousel-item > .d-flex {
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .video-bloco {
+    width: 30%;
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .video-bloco {
+    max-width: 95vw;
+  }
+
+  .videos .ratio {
+    max-height: 300px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .video-bloco {
+    max-width: 45vw;
+  }
+
+  .videos .ratio {
+    max-height: 400px;
+  }
+}
+
+@media (min-width: 992px) {
+  .video-bloco {
+    max-width: 32vw;
+  }
+
+  .videos .ratio {
+    max-height: 500px;
+  }
+}
+
+@media (max-width: 576px) {
+    .fundo-translucido {
+        width: 95vw;
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+  .contato .col-md-7 {
+    padding-left: 0 !important;
+    padding-top: 2rem; /* espaço entre os blocos empilhados */
+    border-left: none !important;
+    border-top: 1px solid #c1c0c0d8; /* uma borda separadora amarela igual do topo */
+    margin-top: 1rem;
+  }
+  .contato .lado-esquerdo {
+    border-right: none !important;
+  }
+}
